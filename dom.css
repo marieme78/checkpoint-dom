@@ -1,0 +1,87 @@
+.main{
+    border: 2px solid gray;
+  height: 500px;
+  width: 1000px;
+  display: flex;
+  justify-content: flex-start;
+}
+.articles{
+    display: flex;
+    justify-content: space-between;
+}
+/*partie-box*/
+.box{
+    border: 2px solid gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+  padding: 10px;
+} 
+/*partie-button*/
+.btn{
+    background: transparent;
+    border: none;
+    font-size: 30px;
+}
+.btn i:hover{
+    cursor: pointer;
+} 
+/*partie-delete*/
+.del{
+    background: transparent;
+    border: none;
+    font-size: 30px;
+}
+.del i:hover{
+    cursor: pointer;
+} 
+/*partie-icon*/
+.icon1{
+    display: flex;
+    margin-top: 15px;
+}
+.icon2{
+    display: flex;
+    margin-top: 15px;
+}
+.icon3{
+    display: flex;
+    margin-top: 15px;
+}
+/* .faSolid{
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    color: red;
+} */
+.basket{
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+} 
+.main{
+    border-radius: 5px;
+    align-items: flex-start;
+}
+.TU{
+    color: blueviolet;
+}
+.sammba{
+    background-color: #ca5a5ed3;
+    height: 50px;
+    width: 350px;
+    padding-top: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 200px;
+    font-size: 25px;
+    color: white;
+    margin-left: 70px;
+}
+.bnt i:hover{
+    cursor: pointer red;
+}
+.grandiv{
+    display: flex;
+}

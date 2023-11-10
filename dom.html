@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dom.css" />
+    <script
+      src="https://kit.fontawesome.com/c9e0da8296.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Checkpoint DOM</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="articles">
+      <!-- menu a faire -->
+        <!--box1-->
+        <div class="grandiv">
+          <div class="box">
+            <img
+              class="basket"
+              src="https://www.leparisien.fr/resizer/lBkY3NgJW4hyuLXAq7W3hnGm7AI=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/USMLJMAPAZDRNPHDGKY7DDUIBU.jpg"
+              alt="basket"
+            />
+            <h3>Basket nike</h3>
+            <div class="colgate">
+              <span class="TU">Prix Unitaire</span>
+              <span  class="pu">20000</span>
+              <span>Fcfa</span>
+            </div>
+            <!--prix-totalUnitaire-->
+            <div class="totalUnit">
+              <span class="TU">Total Unitaire </span>
+              <span class="price" id="pu1">0</span>
+              <span>Fcfa</span>
+            </div>
+            <div>
+              <button class="moins">-</button>
+              <span class="num">0</span>
+              <button class="plus">+</button>
+            </div>
+            <div class="icon1">
+              <div>
+                <button onclick="toggle3()" id="btnh1" class="btn">
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <!-- <div>
+              <button class="faSolid " onclick="toggle1()" id="bnth1">
+                <i  class="fa-solid fa-heart btn"></i>
+              </button>
+            </div> -->
+              <div class="del">
+                <div>
+                  <!-- <button class="fatrash"> -->
+                    <i class="fa-solid fa-trash"></i>
+                  <!-- </button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--box2-->
+        <div class="grandiv">
+          <div class="box">
+            <img
+              class="basket"
+              src="data:image/jpeg;base64,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"
+              height="150px"
+              width="90px"
+              alt=""
+            />
+            <h3>Black Basket</h3>
+            <div>
+              <span class="TU">Prix Unitaire</span>
+              <span  class="pu">18000</span>
+              <span>Fcfa</span>
+            </div>
+            <!--prix-totalUnitaire-->
+            <div class="totalUnit">
+              <span class="TU">Total Unitaire </span>
+              <span class="price" id="pu2">0</span>
+              <span>Fcfa</span>
+            </div>
+            <div>
+              <button class="moins">-</button>
+              <span class="num">0</span>
+              <button class="plus">+</button>
+            </div>
+            <div class="icon2">
+              <div>
+                <button onclick="toggle3()" id="btnh1" class="btn">
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <div class="del">
+                <!-- <button class="fatrash"> -->
+                  <i class="fa-solid fa-trash"></i>
+                <!-- </button> -->
+              </div>
+            </div>
+          </div>
+          <!--box3-->
+        </div>
+        <div class="grandiv">
+          <div class="box">
+            <img
+              class="basket"
+              src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cf42b6f7-ec15-45b3-8e55-d7167fa594a0/chaussure-de-basketball-luka-1-01VPHn.png"
+              height="150px"
+              width="90px"
+              alt=""
+            />
+            <h3>Colorful Basket</h3>
+            <div>
+              <span class="TU">Prix Unitaire</span>
+              <span  class="pu">35000</span>
+              <span>Fcfa</span>
+            </div>
+            <!--prix-totalUnitaire-->
+            <div class="totalUnit">
+              <span class="TU">Total Unitaire</span>
+              <span class="price" id="pu3" >0</span>
+              <span>Fcfa</span>
+            </div>
+            <div>
+              <button class="moins">-</button>
+              <span class="num">0</span>
+              <button class="plus">+</button>
+            </div>
+            <div class="icon3">
+              <div>
+                <button onclick="toggle3()" id="btnh1" class="btn">
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <div class="del">
+                <!-- <button class="fatrash"> -->
+                  <i class="fa-solid fa-trash"></i>
+                <!-- </button> -->
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        <br />
+        <!--totalUnitaire-->
+        <div class="sammba">
+          <span class="TC"><b>Total Commande:</b></span>
+          <span id="tyu">0</span>
+          <span>Fcfa</span>
+        </div>
+
+     </div>
+    </div>
+  </div>
+    <script src="dom.js"></script>
+  </body>
+</html>
